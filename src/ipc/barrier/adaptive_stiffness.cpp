@@ -6,6 +6,8 @@
 
 #include <algorithm> // std::min/max
 
+#include <cassert>
+
 namespace ipc {
 
 double initial_barrier_stiffness(
