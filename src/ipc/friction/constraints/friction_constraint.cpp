@@ -304,7 +304,7 @@ MatrixMax12d FrictionConstraint::compute_force_jacobian(
                     // ∂Γᵢⱼ/∂xₖ = ∂Γᵢⱼ/∂β ⋅ ∂β/∂xₖ
                     jac_Gamma.row(k * dim + i) =
                         jac_Gamma_wrt_beta(
-                            Eigen::seqN(i, beta.size(), dim), Eigen::all)
+                            Eigen::seqN(i, beta.size(), dim), Eigen::placeholders::all)
                             .eval()
                             .transpose()
                         * jac_beta.col(k);
